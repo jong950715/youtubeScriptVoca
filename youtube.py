@@ -23,7 +23,12 @@ def getWords(text):
     res = list(filter(lambda x: len(x) > 2, res))
     return res
 
+def getWordsFromYoutube(videoId):
+    tf, text, possibelLang = getCaptionByVideoid(videoId)
+    if not tf:
+        return [False, []]
+    words = getWords(text)
+    return [True, words]
 
 if __name__ == "__main__":
-    caption = getCaptionByVideoid("FWTNMzK9vG4")
-    words = getWords(caption[1])
+    print(getWordsFromYoutube("FWTNMzK9vG4"))

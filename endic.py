@@ -11,7 +11,7 @@ crawl_api = "크롤할 api"
 options = webdriver.ChromeOptions()
 
 # headless 옵션 설정
-#options.add_argument('headless')
+options.add_argument('headless')
 options.add_argument("no-sandbox")
 
 # 브라우저 윈도우 사이즈
